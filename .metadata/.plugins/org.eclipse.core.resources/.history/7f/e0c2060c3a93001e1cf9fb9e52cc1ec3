@@ -1,0 +1,6 @@
+<style>
+	div{
+		background : blue;
+	}
+</style>
+<div></div>
