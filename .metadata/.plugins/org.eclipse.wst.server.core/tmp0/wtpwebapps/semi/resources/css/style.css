@@ -3,10 +3,15 @@
 *{margin: 0; padding: 0;}
 #container{width: 1024px; margin: 30px auto 100px;}
 ul li{list-style: none;}
-a{text-decoration: none;}
+a{text-decoration: none; color: black;}
+
 /* header 스타일 */
+header{
+	/*width : 1024px;*/
+	width: 100%;
+	margin : 0 auto;
+}
 header #welcome{
-	width : 1024px;
 	text-align: center;
 	border-bottom: 1px solid black;
 }
@@ -14,161 +19,52 @@ header #welcome p{
 	padding: 10px 0;
 	font-size: 13px;
 }
-
-
-header nav{
-	height: 80px;
-	float:left;
+header #menu{
+	width: 100%;
 }
-header nav div{
-	float: left;
-}
-header #menu ul li{
+header nav div{	/*각 mainMenu, sideMenu div에 float를 주어 가로정렬*/ /*nav에 float 주면 가로정렬 되지 않음*/
 	float: left;
 }
 header #mainMenu{
-	width: 700px;
+	/*width: 700px;*/
+	width: 70%;
+	line-height: 80px;
+}
+header #mainMenu ul{
+	display: flex;
+	justify-content: space-around;
 }
 header #mainMenu li{
 	font-size: 20px;
+	color: black;
 }
 header #sideMenu{
-	width: 324px;
+	width: 30%;
+}
+header #sideMenu ul{
+	line-height: 25px;
+	display: flex;
+	justify-content: flex-end;
 }
 header #sideMenu li{
-	font-size: 14px;
+	font-size: 12px;
+	width: 90px;
+}
+header #sideMenu li a{
+	display:flex;
+	justify-content: center;
+}
+header #sideMenu #sideMenu_1 a{
+	padding-top: 15px;
+}
+header #sideMenu #sideMenu_2 a{
+	padding-bottom: 15px;
 }
 
+/* mainMenu의 경우, li 사이에 동일한 간격을 주기위해 padding 사용 */
+/* sideMenu의 경우, padding으로 간격을 줄 시 아래위 li의 위치가 달라짐. 이에 li에 width와 flex요소를 주어 가운데 정렬 시킴 */
 
-/*
- header 스타일 
-header{height: 80px; background: #0077cc;}
-header #logo{width: 250px; float: left; line-height: 80px;}
-#logo h1 a{color: greenyellow; padding-left: 24px; font-style: italic;}
-#logo h1 a:hover{color: #eee;}
-header nav{width: 900px; float: right;}
-#topMenu{line-height: 80px; padding-left: 150px;}
-#topMenu li{float: left; margin: 0 20px;}
-#topMenu li a{color: #eee; padding: 0 20px;}
-#topMenu li a:hover{color: #444;}
-
- main 스타일 
-#main{width: 1000px; height: 600px; margin: 40px auto;}
-#main h1{color: blue; font-style: italic; padding: 20px 60px;}
-#main .main_img{margin: 16px 30px; float: left;}
-#main .main_img img{border-radius: 5px;}
-#main .newboard{margin: 20px;}
-#main .newboard h3{margin: 20px;}
-#main .newboard p{line-height: 2.5;}
-
-
- footer 스타일 
-footer{height: 80px; border-top: 2px solid #222; clear: both;}
-#bottomMenu{margin: 10px 20px;}
-#bottomMenu li{float: left; margin: 10px 0; padding: 0 10px;
-	border-right: 1.5px solid #ccc;}
-#bottomMenu li a{color: #444;}
-#bottomMenu li:last-child{border: none;}
-
- 회원 목록 스타일 
-#memberlist{width: 700px; margin: 20px auto;}
-#memberlist .logout{text-align: right;}
-#memberlist table{width: 700px; margin: 20px auto;}
-#memberlist table, th, td{border: 1px solid #ccc; 
-  border-collapse: collapse; text-align: center;}
-table th, td{padding: 10px;}
-table thead{background: #eee;}
-*/
-/* 회원 가입 스타일 */
-#join{width: 500px; margin: 20px auto;}
-#join form{margin: 20px auto;}
-form ul li{margin: 20px;}
-form .button{margin-top: 16px;}
-form .button button{padding: 5px;}
-form label{width: 120px; float: left; padding-left: 20px;}
-form input{padding: 5px;}
-
-/* 회원 정보 스타일 */
-#memberview{width: 460px; margin: 20px auto;}
-#memberview table{width: 460px; margin: 20px auto;}
-#memberview table, th, td{border: 1px solid #ccc; 
-  border-collapse: collapse; text-align: center;}
-table th, td{padding: 10px;}
-#memberview button{padding: 5px;}
-/*
- login 스타일 
-#login {width: 400px; margin: 30px auto 100px;}
-#login form{margin: 30px auto;}
-#login form ul li{margin: 30px;}
-#login .error{color: #e00; margin-top: 16px; font-size: 0.9em}
-#login button{width: 100%; padding: 10px 0;}
-
- 게시글 목록 스타일 
-#boardlist{width: 700px; margin: 20px auto;}
-#boardlist table{width: 700px; margin: 20px auto;}
-#boardlist table, th, td{border: 1px solid #ccc; 
-  border-collapse: collapse; text-align: center;}
-table th, td{padding: 10px;}
-table thead{background: #eee;}
-#boardlist button{padding: 10px;}
-
- 글쓰기 스타일
-#writeform{width: 550px; margin: 20px auto;}
-#writeform table{width: 550px; margin: 20px auto;}
-#writeform table, th, td{border: 1px solid #ccc; 
-  border-collapse: collapse; text-align: center;}
-table th, td{padding: 10px;}
-table thead{background: #eee;}
-#writeform input{width: 540px; height: 25px; padding: 5px;}
-#writeform textarea{width: 540px; height: 300px; padding: 5px;}
-#writeform button{padding: 5px;}
-
- 글 상세보기 스타일 
-#board_view{width: 550px; margin: 20px auto;}
-#board_view table{width: 550px; margin: 20px auto;}
-#board_view table, th, td{border: 1px solid #ccc; 
-  border-collapse: collapse; text-align: center;}
-table th, td{padding: 10px;}
-table thead{background: #eee;}
-#board_view input{width: 540px; height: 25px; padding: 5px;}
-#board_view textarea{width: 540px; height: 300px; padding: 5px;}
-#board_view button{padding: 5px;}
-
- 댓글 영역 스타일 
-#board_view h3{
-	margin-bottom: 12px;
-	color: #444;
-}
-#board_view .reply{
-	border-top: 1px dotted #ccc;
-}
-#board_view .reply p{
-	margin: 10px 0;
-	font-size: 0.9em;
-	color: #444;
-}
-
- 댓글 내용 - 줄바꿈하기 : white-space:pre-line
-#board_view .reply p:nth-of-type(1){
-	white-space: pre-line; white-space (enter)하면 줄바꿈;
-	line-height: 1.5;
-}
-#replyform textarea{
-	height: 100px;
-}
-#replyform button{
-	margin-top: 6px;
-}
-.replylogin{
-	background-color: #eee;
-	margin: 10px 0;
-	padding: 16px;
-	text-align: center;
-	border-radius: 5px;
-}
-.replylogin a{
-	color:blue;
-}
-.replylogin a:hover{
-	text-decoration: underline;
-}*/
+/* 구현 1 */
+/* mainMenu의 각 li에 마우스 올릴 시, 전체 하위 카테고리 나옴 + 헤더부분의 배경색 변경됨 */
+/* mainMenu의 각 li에 마우스 올릴 시, li에 italic, 밑줄표시 */
+/* 하단 카테고리 선택 시, 연한 색상 -> 진한 색상으로 변경, italic, 밑줄표시*/
